@@ -12,8 +12,10 @@ var start = function(route,handle) {
     response.write(content);
     response.end();
   }
-  console.log('created response')
-  http.createServer(onRequest).listen(8888);
+  console.log('created response');
+  http.createServer(onRequest).listen(8888,function() {
+    console.log('server up');
+  });
 }
 
 console.log('server started');
